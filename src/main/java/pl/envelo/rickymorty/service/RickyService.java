@@ -10,8 +10,8 @@ import pl.envelo.rickymorty.model.Episode;
 @RequiredArgsConstructor
 public class RickyService {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final ObjectMapper objectMapper;
+    private final RestTemplate restTemplate;
 
     public Episode getEpisode(long id) {
         Episode response = restTemplate.getForObject("https://rickandmortyapi.com/api/episode/" + id, Episode.class);

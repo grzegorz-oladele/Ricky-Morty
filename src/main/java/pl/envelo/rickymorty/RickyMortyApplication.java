@@ -12,4 +12,14 @@ public class RickyMortyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RickyMortyApplication.class, args);
 	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+
+	@Bean
+	public ObjectMapper objectMapper() {
+		return new ObjectMapper();
+	}
 }
