@@ -1,4 +1,4 @@
-package pl.envelo.rickymorty.model.byid;
+package pl.envelo.rickymorty.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Episode {
+public class EpisodeDto {
 
     private int id;
     private String name;
@@ -16,5 +16,4 @@ public class Episode {
     private List<String> characters;
     private String url;
     private String created;
-
 }

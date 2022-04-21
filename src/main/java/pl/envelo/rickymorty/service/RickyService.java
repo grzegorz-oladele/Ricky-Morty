@@ -4,10 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import pl.envelo.rickymorty.model.byid.Episode;
-import pl.envelo.rickymorty.model.episode.Ricky;
-
-import java.util.List;
+import pl.envelo.rickymorty.model.EpisodeDto;
+import pl.envelo.rickymorty.model.EpisodesDto;
 
 @Service
 @RequiredArgsConstructor
@@ -16,13 +14,13 @@ public class RickyService {
     private final ObjectMapper objectMapper;
     private final RestTemplate restTemplate;
 
-    public Episode getEpisode(long id) {
-        Episode response = restTemplate.getForObject("https://rickandmortyapi.com/api/episode/" + id, Episode.class);
-        return objectMapper.convertValue(response, Episode.class);
+    public EpisodeDto getEpisode(long id) {
+        EpisodeDto response = restTemplate.getForObject("https://rickandmortyapi.com/api/episode/" + id, EpisodeDto.class);
+        return objectMapper.convertValue(response, EpisodeDto.class);
     }
 
-    public Ricky getEpisode() {
-        Ricky response = restTemplate.getForObject("https://rickandmortyapi.com/api/episode", Ricky.class);
-        return objectMapper.convertValue(response, Ricky.class);
+    public EpisodesDto getAllEpisodes() {
+        EpisodesDto response = restTemplate.getForObject("https://rickandmortyapi.com/api/episode", EpisodesDto.class);
+        return objectMapper.convertValue(response, EpisodesDto.class);
     }
 }

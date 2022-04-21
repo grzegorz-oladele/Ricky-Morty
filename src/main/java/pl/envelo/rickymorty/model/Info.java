@@ -1,4 +1,4 @@
-package pl.envelo.rickymorty.model.episode;
+package pl.envelo.rickymorty.model;
 
 import lombok.Getter;
 import lombok.Setter;
