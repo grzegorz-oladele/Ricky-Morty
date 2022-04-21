@@ -1,4 +1,4 @@
-package pl.envelo.rickymorty.model;
+package pl.envelo.rickymorty.model.byid;
 
 import lombok.Getter;
 import lombok.Setter;
